@@ -1,0 +1,120 @@
+{
+	"info": {
+		"_postman_id": "48fe3937-1a6c-449c-9bc6-7198875d2ab5",
+		"name": "jwt-auth",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20543758"
+	},
+	"item": [
+		{
+			"name": "POST - /api/auth/login (Auth)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"backoffice@admin.com\",\n    \"password\": \"pass_b\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5001/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - /api/secret",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyIiwiaWF0IjoxNjc4MzgzNDk4LCJleHAiOjE2NzgzODQwOTgsInJvbGUiOiJ1c2VyXzEifQ.lOZknagLSDyRPs5vaaNx0Rwzg1eFs0HfV5gr_yqI6_igdtJasxh6a6maCFDcwOrScJZJE_5i2haUEpImbmS1kvwnOhHlFbmrJLTFzVWGvkFLzil7Jq6GiH_am0HY9tJ2UDJjeGO30gQUH2jUL76yQxLn1KmRFXXudqktQptn6KA1o5ussw8yv9z7YP3zYhErSrn1hGInEqad3nlo9q7WvwzONhWzRIvdFXDig_CcbNQMrb3g0qHP5UU-Z12npFU1Sr8Q7ZPnKqxuPa5MdL35xemUHtaEVLj54cAZ7-zQdQKtFmO1O9iLRIqMIXZ7Tz7Xhwhwxy-jsK1kcBBWB8XN6ISyy3pmmrOcQ76ypY6LE27T-mfOBG4x3FL4HdwzDNZ1KelsZY_PhjawJ9Q2wtpP0sYTdDndozk-LQz8jo_3iFcVD7kl0-zfkH9FHuvLQKCdZlUOSAzLT2Yq_GuuaXKdYCddO5Slgp2MiwjXjQxU3aIZS4UklshsbHPRpesmPK6_",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:5001/api/secret",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"secret"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - /api/secret/admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJqb18xMCIsImlhdCI6MTY3ODM4MzU5MSwiZXhwIjoxNjc4Mzg0MTkxLCJyb2xlIjoiYmFja29mZmljZSJ9.lBPhjmeDBu2_kakqhwAiQGrybtaVFgBDKEPVuFy_FUbC_vymkpF8lbqdavEHuD1ZS3FgoF7iDjwaA-qys_FBh9InMLl1xDyQih1zOqzb0PtY0sKpmGyuWgCikVfSCER8zuveizlS_z9CcMgchNuf5OctJPStiXRUG82bRKrw3ntRDAbomUQ5Y-YjifbzkQ-afUMaPQ2dtPb0mRxV72Xz7pjugPELTPb50QMSNn6XQ8CGxCmXUA1yNsjdJbj0j6CbgkO0XZh6Rjab5lLlLK_dVeHYzJN_ED6jpOHWqexl6yK4M8iq1cn2XZwtxJMr7K_bTtlsW5xSChfr6-Sofafv6F3spoVwhnfNoICPjVOleAiU-OLZKmiylhv4a8o0Z7fshQjlCrKpJJIcxbtTzecAid6pjDdDoKqwP5oDXkyCs-d9cSH38prTzFt8XdTmOXt1uIIpvH_rrRM66Ca6kjhbF-pzHlSvbpir3o7111R8iHaR36IG_-lIuWvZxurB-DgL",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:5001/api/secret/admin",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"secret",
+						"admin"
+					],
+					"query": [
+						{
+							"key": "Authorization",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
