@@ -8,6 +8,13 @@ flask = "*"
 python-dotenv = "*"
 pyjwt = {extras = ["crypto"], version = "*"}
 cryptography = {extras = ["ssh"], version = "*"}
+sqlalchemy = "*"
+psycopg2 = "*"
+psycopg = "*"
+isort = "*"
+flake8 = "*"
+black = "*"
+pre-commit = "*"
 
 [dev-packages]
 
