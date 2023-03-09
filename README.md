@@ -29,8 +29,7 @@ Note: You will also be asked to type in the file name to save the key and then a
 
    
 4. Set environment variable. Update (or create) the .env file with the following information:  
-PS: KEY_PASS will be the passphrase you created in the previous step, and the SECRET is a passphrase used in the algorithm HS256, so type in a pass of your choise. 
-Also type in a postgres user and password of your choice.
+PS: KEY_PASS will be the passphrase you created in the previous step. Also type in a postgres user and password of your choice.
 ```sh
 CONFIG_ENV=config.DevelopmentConfig
 KEY_PASS=CHANGE_THIS
