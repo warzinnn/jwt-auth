@@ -2,7 +2,7 @@ from dotenv import dotenv_values
 from flask import Flask
 
 import src.infrastructure.entities.orm as ORM
-from src.blueprint.routes import blueprint_test
+from src.entrypoints.blueprint_auth import blueprint_auth
 
 
 def create_app():
@@ -16,6 +16,6 @@ def create_app():
 
     ORM.configure_mappers()
 
-    app.register_blueprint(blueprint_test, url_prefix="/api")
+    app.register_blueprint(blueprint_auth, url_prefix="/api")
 
     return app

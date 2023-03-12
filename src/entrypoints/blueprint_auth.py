@@ -7,10 +7,10 @@ from src.auth_handler.token_verifier import token_verify
 from src.infrastructure.config.connection import DBConnectionHandler
 from src.infrastructure.repository.user_repository import UserRepository
 
-blueprint_test = Blueprint(name="blueprint_test", import_name=__name__)
+blueprint_auth = Blueprint(name="blueprint_auth", import_name=__name__)
 
 
-@blueprint_test.route("/auth/login", methods=["POST"])
+@blueprint_auth.route("/auth/login", methods=["POST"])
 def do_login():
     user_repo = UserRepository(DBConnectionHandler)
 
@@ -31,14 +31,14 @@ def do_login():
     return jsonify({"message": "error"})
 
 
-@blueprint_test.route("/secret/admin", methods=["GET"])
+@blueprint_auth.route("/secret/admin", methods=["GET"])
 @token_verify
 @role_verify
 def get_secret_admin():
     return jsonify({"message": "Successful admin access"})
 
 
-@blueprint_test.route("/secret", methods=["GET"])
+@blueprint_auth.route("/secret", methods=["GET"])
 @token_verify
 def get_secret():
     return jsonify({"message": "s3cr3t_m3ss4g3"})

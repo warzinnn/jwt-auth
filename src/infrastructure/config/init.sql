@@ -1,10 +1,9 @@
 CREATE TABLE IF NOT EXISTS users (
-    id SERIAL NOT NULL,
     email VARCHAR NOT NULL,
     username VARCHAR NOT NULL,
     passwd VARCHAR NOT NULL,
     role VARCHAR NOT NULL,
-    PRIMARY KEY(id)
+    PRIMARY KEY(email)
 );
 
 

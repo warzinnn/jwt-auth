@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Table
+from sqlalchemy import Column, String, Table
 from sqlalchemy.exc import ArgumentError
 from sqlalchemy.orm import class_mapper, registry
 from sqlalchemy.orm.exc import UnmappedClassError
@@ -10,8 +10,7 @@ mapper_registry = registry()
 user_table = Table(
     "users",
     mapper_registry.metadata,
-    Column("id", Integer, primary_key=True),
-    Column("email", String, nullable=False),
+    Column("email", String, primary_key=True),
     Column("username", String, nullable=False),
     Column("passwd", String, nullable=False),
     Column("role", String, nullable=False),
