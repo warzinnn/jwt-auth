@@ -4,7 +4,7 @@ from typing import List
 from src.domain.model.user import User
 
 
-class UserInterface(ABC):
+class UserRepositoryInterface(ABC):
     @abstractmethod
     def select_all_users(self) -> List[User]:
         raise NotImplementedError

@@ -4,18 +4,20 @@ import jwt
 from cryptography.hazmat.primitives import serialization
 from dotenv import dotenv_values
 
+from src.interfaces.token_creator_interface import TokenCreatorInterface
 
-class TokenCreator:
+
+class TokenCreator(TokenCreatorInterface):
     def __init__(self) -> None:
-        self.__TOKEN_KEY = self.__get_private_key()
+        self.__TOKEN_KEY = self._get_private_key()
         self.__EXP_TIME_MINUTES = 10
         # self.__REFRESH_TIME_MINUTES = 5
 
     def get_token(self, username, role):
         """Function to return JWT token"""
-        return self.__encode_token(username, role)
+        return self._encode_token(username, role)
 
-    def __get_private_key(self):
+    def _get_private_key(self):
         """Function to get the private key"""
         with open(".ssh/id_rsa", "r") as file:
             private_key = file.read()
@@ -26,7 +28,7 @@ class TokenCreator:
         )
         return key
 
-    def __encode_token(self, username, role):
+    def _encode_token(self, username, role):
         """Function to encode the token with a payload
         :params - None
         :return - JWT token

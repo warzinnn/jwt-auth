@@ -1,10 +1,10 @@
 from typing import List
 
 from src.domain.model.user import User
-from src.infrastructure.interfaces.user_repository_interface import UserInterface
+from src.interfaces.user_repository_interface import UserRepositoryInterface
 
 
-class UserRepository(UserInterface):
+class UserRepository(UserRepositoryInterface):
     def __init__(self, connection_handler) -> None:
         self.__connection_handler = connection_handler
 

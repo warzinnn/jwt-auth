@@ -44,7 +44,7 @@ class TestUser:
         """
         GIVEN a user object is created
         WHEN converts the object to dictionary
-        THEN returns the user object as a dictionary with his respective  key-value pair
+        THEN returns the user object as a dictionary with his respective key-value pair
         """
         expected_dict = {
             "email": "test@email.com",
@@ -53,3 +53,29 @@ class TestUser:
             "role": "test",
         }
         assert mock_user.as_dict() == expected_dict
+
+    def test_user_object_comparison(self, mock_user):
+        """
+        GIVEN a user object is created
+        WHEN compare isntances of user object
+        THEN checks if the comparison work as expected
+        """
+        user_test1 = mock_user
+        user_test2 = mock_user
+
+        assert user_test2 == user_test1
+
+    def test_user_object_comparison_fail(self, mock_user):
+        """
+        GIVEN a user object is created
+        WHEN compare isntances of user object
+        THEN checks if the comparison work as expected
+        """
+        user_test1 = mock_user
+        user_test2 = User(
+            "test2@email.com",
+            "test_x",
+            "$2b$12$91PDBI/A9nh5GjLo1upqXun.IBQcN7lvd8O1xfqyNIxEISIkzLCDW",
+            "test",
+        )
+        assert user_test2 != user_test1
