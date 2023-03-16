@@ -20,7 +20,7 @@ pip install -r requirements
 ```
 
 3. Generating an RSA key pair
-This projects uses the asymmetric algorithm RS256, so you will need to generate a public/private key pair.
+This project uses the asymmetric algorithm RS256, so you will need to generate a public/private key pair.
 ```bash
 mkdir .ssh
 ssh-keygen -t rsa
